@@ -9,26 +9,26 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fas fa-th-large"></i>
+                        <i class="fas fa-bars"></i>
                         <div class="title">Dashboard</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fas fa-stethoscope"></i>
-                        <div class="title">School</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-puzzle-piece"></i>
+                        <i class="fas fa-user-graduate"></i>
                         <div class="title">Students</div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fas fa-hand-holding-usd"></i>
-                        <div class="title">Evaluation</div>
+                        <i class="fas fa-puzzle-piece"></i>
+                        <div class="title">School</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div class="title">Teachers</div>
                     </a>
                 </li>
                 <li>
@@ -83,10 +83,10 @@
                     <div class="custom-card">
                         <div class="custom-card-content">
                             <div class="number">100</div>
-                            <div class="custom-card-name">Exercices</div>
+                            <div class="custom-card-name">Teachers</div>
                         </div>
                         <div class="icon-box">
-                            <i class="fas fa-bed"></i>
+                            <i class="fas fa-chalkboard-teacher"></i>
                         </div>
                     </div>
                 </a>
@@ -94,10 +94,10 @@
                     <div class="custom-card">
                         <div class="custom-card-content">
                             <div class="number">777</div>
-                            <div class="custom-card-name">Opération</div>
+                            <div class="custom-card-name">School</div>
                         </div>
                         <div class="icon-box">
-                            <i class="fas fa-dollar-sign"></i>
+                            <i class="fas fa-school"></i>
                         </div>
                     </div>
                 </a>
@@ -119,7 +119,7 @@
                             <td>Actions</td>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let student of students">
+                            <tr *ngFor="let student of students | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
                                 <td>{{ student.prenomStudent }} {{ student.nomStudent }}</td>
                                 <td>{{ student.seledJour }} {{ student.seledMois }} {{ student.seledAnnee}}</td>
                                 <td>{{ student.sexeStudent }}</td>
@@ -134,6 +134,10 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="pagination">
+                        <!-- Ajoutez les boutons de pagination ici -->
+                        <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+                      </div>
                 </div>
                 <!-- <div class="doctor-visiting">
                     <div class="heading">
