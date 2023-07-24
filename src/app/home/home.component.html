@@ -1,0 +1,147 @@
+    <div class="custom-container">
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-school"></i>
+                        <div class="title">ZooSchool</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-th-large"></i>
+                        <div class="title">Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-stethoscope"></i>
+                        <div class="title">School</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <div class="title">Students</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <div class="title">Evaluation</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-cog"></i>
+                        <div class="title">Settings</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-question"></i>
+                        <div class="title">Help</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="custom-main">
+            <div class="top-bar">
+                <div class="search">
+                    <input type="text" name="search" placeholder="search here">
+                    <label for="search"><i class="fas fa-search"></i></label>
+                </div>
+                <i class="fas fa-bell"></i>
+                <div class="user">
+                    <img src="/pictures/vector-users-icon.jpg" alt="">
+                </div>
+            </div>
+            <div class="custom-cards">
+                <a routerLink="/students">
+                    <div class="custom-card">
+                        <div class="custom-card-content">
+                            <div class="number">67</div>
+                            <div class="custom-card-name">Students</div>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                    </div>
+                </a>
+                <a routerLink="/create-student">
+                    <div class="custom-card">
+                        <div class="custom-card-content">
+                            <div class="number">267</div>
+                            <div class="custom-card-name">New Student</div>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="custom-card">
+                        <div class="custom-card-content">
+                            <div class="number">100</div>
+                            <div class="custom-card-name">Exercices</div>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="custom-card">
+                        <div class="custom-card-content">
+                            <div class="number">777</div>
+                            <div class="custom-card-name">Opération</div>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="custom-tables">
+                <div class="last-appointments">
+                    <div class="heading">
+                        <h2>La Liste des Etudiants</h2>
+                        <a href="#" class="custom-btn">View All</a>
+                    </div>
+                    <table class="appointments">
+                        <thead>
+                            <td>Prenom  Nom</td>
+                            <td>Date de Naissance</td>
+                            <td>Sexe</td>
+                            <td>Niveau Etude</td>
+                            <td>Email</td>
+                            <td>Téléphone</td>
+                            <td>Actions</td>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let student of students">
+                                <td>{{ student.prenomStudent }} {{ student.nomStudent }}</td>
+                                <td>{{ student.seledJour }} {{ student.seledMois }} {{ student.seledAnnee}}</td>
+                                <td>{{ student.sexeStudent }}</td>
+                                <td>{{ student.niveauEtudeStudent }}</td>
+                                <td>{{ student.emailStudent }}</td>
+                                <td>{{ student.telephoneStudent }}</td>
+                                <td>
+                                    <button><i class="far fa-eye "></i></button>
+                                    <button (click)="updateStudent(student.id)"><i class="far fa-edit" ></i></button>
+                                    <button (click)="deleteStudent(student.id)"><i class="far fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div class="doctor-visiting">
+                    <div class="heading">
+                        <h2>Doctor Visiting</h2>
+                        <a href="#" class="custom-btn">View All</a>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
