@@ -33,6 +33,8 @@ export class StudentService {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
-  
+  getNombreStudents(): Observable<number> {
+    return this.http.get<number>(`${this.baseUrl}/count`);
+  }
 
 }

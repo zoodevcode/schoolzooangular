@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <div class="container">
+      <h1 class="title">Formulaire d'Inscription</h1>
+      <div class="photo-frame"></div>
+      <form (ngSubmit)="onSubmit()" class="my-form">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="nom">Nom:</label>
+            <input type="text" [(ngModel)]="teacher.nomTeacher" name="nomTeacher" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label for="prenom">Prénom:</label>
+            <input type="text" [(ngModel)]="teacher.prenomTeacher" name="prenomTeacher" class="form-control">
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Email</label>
+              <input type="email" class="form-control" required [(ngModel)]="teacher.emailTeacher" name="emailTeacher" placeholder="Enter your email address" >
+            </div>
+          
+            <div class="form-group col-md-6">
+              <label>Téléphone</label>
+              <input type="tel" class="form-control" [(ngModel)]="teacher.telephoneTeacher" name="telephoneTeacher" required>
+            </div>
+        </div>  
+        <div class="form-group">
+          <label>Profession</label>
+          <select class="form-control" [(ngModel)]="teacher.professionTeacher" name="professionTeacher">
+              <option value="Enseignant">Enseignant Chercheur</option>
+              <option value="Enseignant">Enseignant</option>
+              <option value="Professeur">Professeur</option>
+              <option value="Maitre">Maitre</option>
+          </select>
+        </div>  
+        <div class="form-group">
+            <label>Type Contrat Teacher</label>
+            <select class="form-control" [(ngModel)]="teacher.typeContratTeacher" name="typeContratTeacher">
+                <option value="Enseignant">CDD</option>
+                <option value="Enseignant">CDI</option>
+                <option value="Professeur">Prestataire</option>
+            </select>
+          </div>  
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+
