@@ -1,0 +1,28 @@
+<div class="custom-tables">
+    <div class="last-appointments">
+        <div class="heading">
+            <h2>La Liste des Enseignants</h2>
+            <a routerLink="/create-subject" class="custom-btn">Add</a>
+        </div>
+        <table class="appointments">
+            <thead>
+                <td>Nom</td>
+                <td>Actions</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let subject of subjects | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+                    <td>{{ subject.nomSubject }}</td>
+                        <td>
+                            <button><i class="far fa-eye "></i></button>
+                            <button (click)="updateSubject(subject.id)"><i class="far fa-edit" ></i></button>
+                            <button (click)="deleteSubject(subject.id)"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <!-- Ajoutez les boutons de pagination ici -->
+            <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+        </div>
+    </div>
+</div>

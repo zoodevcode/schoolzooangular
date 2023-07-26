@@ -14,9 +14,12 @@ import { UpdateStudentComponent } from './update-student/update-student.componen
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { TeacherService } from 'src/teacher.service';
+import { TeacherService } from './teacher.service';
 import { CreateTeacherComponent } from './create-teacher/create-teacher.component';
 import { ListTeacherComponent } from './list-teacher/list-teacher.component';
+import { ListSubjectComponent } from './list-subject/list-subject.component';
+import { CreateSubjectComponent } from './create-subject/create-subject.component';
+import { SubjectService } from './subject.service';
 
 
 @NgModule({
@@ -28,6 +31,8 @@ import { ListTeacherComponent } from './list-teacher/list-teacher.component';
     HomeComponent,
     CreateTeacherComponent,
     ListTeacherComponent,
+    ListSubjectComponent,
+    CreateSubjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ import { ListTeacherComponent } from './list-teacher/list-teacher.component';
     HttpClientModule,
     FontAwesomeModule,
   ],
-  providers: [StudentService, TeacherService],
+  providers: [StudentService, TeacherService, SubjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

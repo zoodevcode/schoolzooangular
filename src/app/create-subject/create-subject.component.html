@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <div class="container">
+      <h1 class="title">Formulaire d'ajout Matière</h1>
+      <div class="photo-frame"></div>
+      <form (ngSubmit)="onSubmit()" class="my-form">
+        <div class="form-group">
+          <label>Nom Matière</label>
+          <select class="form-control" [(ngModel)]="subject.nomSubject" name="nomSubject">
+              <option value="Math">Math</option>
+              <option value="Français">Français</option>
+              <option value="Arabe">Arabe</option>
+              <option value="Spaniol">Spaniol</option>
+              <option value="Anglais">Anglais</option>
+              <option value="Philosophie">Philosophie</option>
+          </select>
+        </div>    
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+

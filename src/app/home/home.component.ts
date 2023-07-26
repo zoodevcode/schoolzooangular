@@ -5,7 +5,9 @@ import { Student } from '../student';
 import { StudentService } from '../student.service';
 import { Router } from '@angular/router';
 import { Teacher } from '../teacher';
-import { TeacherService } from 'src/teacher.service';
+import { TeacherService } from '../teacher.service';
+import { Subject } from '../subject';
+import { SubjectService } from '../subject.service';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +20,8 @@ export class HomeComponent implements OnInit{
   students:Student[]=[];
   nombreTeachers!: number;
   teachers:Teacher[]=[];
+  nombreSubjects!: number;
+  subjects:Subject[]=[];
   itemsPerPage: number = 5; // Nombre d'éléments par page
   currentPage: number = 1; // Page actuelle
   // Fonction pour mettre à jour la page actuelle lorsqu'un changement de page est déclenché
@@ -25,12 +29,14 @@ export class HomeComponent implements OnInit{
   onPageChange(pageNumber: number) {
     this.currentPage = pageNumber;
   }
-  constructor(private service:StudentService, private service1:TeacherService, private router:Router){}
+  constructor(private service:StudentService, private service1:TeacherService, private service2:SubjectService, private router:Router){}
   ngOnInit(): void {  
     this.getStudents();
     this.getNombreStudents();
     this.getTeachers();
     this.getNombreTeachers();
+    this.getSubjects();
+    this.getNombreSubjects();
   }
 
   getStudents(){
@@ -84,7 +90,7 @@ export class HomeComponent implements OnInit{
 
   deleteTeacher(id:number | undefined){
     if (id !== undefined) {
-        if (window.confirm("Êtes-vous sûr de vouloir supprimer cet étudiant ?")) {
+        if (window.confirm("Êtes-vous sûr de vouloir supprimer cet professeur ?")) {
         this.service1.deleteTeacher(id).subscribe(data => {
           this.getTeachers();
         });
@@ -97,6 +103,42 @@ export class HomeComponent implements OnInit{
       (data) => {
         this.nombreTeachers = data; // Assurez-vous que le service renvoie le nombre d'étudiants ici
         console.log(this.nombreTeachers); // Ajoutez le console.log ici
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+
+  getSubjects(){
+    this.service2.getSubjectList().subscribe(data=>{
+      this.subjects=data;
+    })
+  }
+  
+
+  updateSubject(id:number | undefined){
+    if (id !== undefined) {
+      this.router.navigate(['update-subject', id]);
+    }
+  }
+
+  deleteSubject(id:number | undefined){
+    if (id !== undefined) {
+        if (window.confirm("Êtes-vous sûr de vouloir supprimer cette matière ?")) {
+        this.service2.deleteSubject(id).subscribe(data => {
+          this.getSubjects();
+        });
+      }
+    }
+  }
+
+  getNombreSubjects(): void {
+    this.service2.getNombreSubjects().subscribe(
+      (data) => {
+        this.nombreSubjects = data; // Assurez-vous que le service renvoie le nombre d'étudiants ici
+        console.log(this.nombreSubjects); // Ajoutez le console.log ici
       },
       (error) => {
         console.error(error);
