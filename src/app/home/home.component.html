@@ -48,7 +48,7 @@
     <div class="custom-main">
         <div class="top-bar">
             <div class="search">
-                <input type="text" name="search" placeholder="search here">
+                <input type="text" [(ngModel)]="filterText" name="search" placeholder="search here" >
                 <label for="search"><i class="fas fa-search"></i></label>
             </div>
             <i class="fas fa-bell"></i>
@@ -130,7 +130,8 @@
                         <td>Actions</td>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let student of students | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+                        <!-- | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }   | filterStudent: filterText-->
+                        <tr *ngFor="let student of students | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage } | filterStudent: filterText">
                             <td>{{ student.prenomStudent }} {{ student.nomStudent }}</td>
                             <td>{{ student.seledJour }} {{ student.seledMois }} {{ student.seledAnnee}}</td>
                             <td>{{ student.sexeStudent }}</td>

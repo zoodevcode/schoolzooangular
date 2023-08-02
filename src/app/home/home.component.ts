@@ -8,6 +8,7 @@ import { Teacher } from '../teacher';
 import { TeacherService } from '../teacher.service';
 import { Subject } from '../subject';
 import { SubjectService } from '../subject.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +25,8 @@ export class HomeComponent implements OnInit{
   subjects:Subject[]=[];
   itemsPerPage: number = 5; // Nombre d'éléments par page
   currentPage: number = 1; // Page actuelle
-  // Fonction pour mettre à jour la page actuelle lorsqu'un changement de page est déclenché
+  filteredStudents: Student[] = [];
+  filterText: string = '';
   
   onPageChange(pageNumber: number) {
     this.currentPage = pageNumber;
@@ -145,5 +147,6 @@ export class HomeComponent implements OnInit{
       }
     );
   }
+
 
 }

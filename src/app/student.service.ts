@@ -12,6 +12,10 @@ export class StudentService {
 
   constructor(private http:HttpClient){ }
 
+  getStudents(): Observable<Student[]> {
+    return this.http.get<Student[]>(this.baseUrl);
+  }
+
   getStudentList():Observable<Student[]>{
     return this.http.get<Student[]>(`${this.baseUrl}`);
   }
@@ -36,5 +40,6 @@ export class StudentService {
   getNombreStudents(): Observable<number> {
     return this.http.get<number>(`${this.baseUrl}/count`);
   }
+
 
 }

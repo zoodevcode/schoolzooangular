@@ -36,4 +36,6 @@ export class SubjectService {
   getNombreSubjects(): Observable<number> {
     return this.http.get<number>(`${this.baseUrl}/count`);
   }
+
+  
 }

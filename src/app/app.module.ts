@@ -20,6 +20,7 @@ import { ListTeacherComponent } from './list-teacher/list-teacher.component';
 import { ListSubjectComponent } from './list-subject/list-subject.component';
 import { CreateSubjectComponent } from './create-subject/create-subject.component';
 import { SubjectService } from './subject.service';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { SubjectService } from './subject.service';
     ListTeacherComponent,
     ListSubjectComponent,
     CreateSubjectComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,7 @@ import { SubjectService } from './subject.service';
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
-  ],
+  ], 
   providers: [StudentService, TeacherService, SubjectService],
   bootstrap: [AppComponent]
 })
