@@ -21,7 +21,21 @@ import { ListSubjectComponent } from './list-subject/list-subject.component';
 import { CreateSubjectComponent } from './create-subject/create-subject.component';
 import { SubjectService } from './subject.service';
 import { FilterPipe } from './filter.pipe';
-
+import { CreateSchoolyearComponent } from './create-schoolyear/create-schoolyear.component';
+import { ListSchoolyearComponent } from './list-schoolyear/list-schoolyear.component';
+import { SchoolyearService } from './schoolyear.service';
+import { UpdateSchoolyearComponent } from './update-schoolyear/update-schoolyear.component';
+import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
+import { UpdateSubjectComponent } from './update-subject/update-subject.component';
+import { CommonModule, DatePipe } from '@angular/common';
+import { UpdateSchoolComponent } from './update-school/update-school.component';
+import { CreateSchoolComponent } from './create-school/create-school.component';
+import { ListSchoolComponent } from './list-school/list-school.component';
+import { SchoolService } from './school.service';
+import { ListStudentNoteComponent } from './list-student-note/list-student-note.component';
+import { CreateStudentNoteComponent } from './create-student-note/create-student-note.component';
+import { UpdateStudentNoteComponent } from './update-student-note/update-student-note.component';
+import { StudentNoteService } from './student-note.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +49,18 @@ import { FilterPipe } from './filter.pipe';
     ListSubjectComponent,
     CreateSubjectComponent,
     FilterPipe,
+    CreateSchoolyearComponent,
+    ListSchoolyearComponent,
+    UpdateSchoolyearComponent,
+    UpdateTeacherComponent,
+    UpdateSubjectComponent,
+    UpdateSchoolComponent,
+    CreateSchoolComponent,
+    ListSchoolComponent,
+    ListStudentNoteComponent,
+    CreateStudentNoteComponent,
+    UpdateStudentNoteComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -44,8 +70,9 @@ import { FilterPipe } from './filter.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
+    CommonModule,
   ], 
-  providers: [StudentService, TeacherService, SubjectService],
+  providers: [StudentService, TeacherService, SubjectService, SchoolyearService, DatePipe, SchoolService, StudentNoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

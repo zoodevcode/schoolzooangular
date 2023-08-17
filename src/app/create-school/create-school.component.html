@@ -1,0 +1,36 @@
+<!-- add-school-year.component.html -->
+<div class="container">
+    <div class="card">
+      <h2 class="card-header">Ajouter une School Year</h2>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="nomSchool">Nom de l'école :</label>
+            <input type="text" class="form-control" id="nomSchool" [(ngModel)]="school.nomSchool" name="nomSchool" required>
+          </div>
+          <div class="form-group">
+            <label for="emailSchool">Email:</label>
+            <input type="text" class="form-control" id="emailSchool" [(ngModel)]="school.emailSchool" name="emailSchool" required>
+          </div>
+          <div class="form-group">
+            <label for="nomSchool">Téléphone :</label>
+            <input type="text" class="form-control" id="telephoneSchool" [(ngModel)]="school.telephoneSchool" name="telephoneSchool" required>
+          </div>
+          <div class="form-group">
+            <label for="localisationSchool">Localisation :</label>
+            <input type="text" class="form-control" id="localisationSchool" [(ngModel)]="school.localisationSchool" name="localisationSchool" required>
+          </div>
+          <div class="form-group">
+            <label for="boitePostaleSchool">Boite Postale :</label>
+            <input type="text" class="form-control" id="boitePostaleSchool" [(ngModel)]="school.boitePostaleSchool" name="boitePostaleSchool" required>
+          </div>
+          <div class="form-group">
+            <label for="localisationSchool">Observation :</label>
+            <input type="text" class="form-control" id="observation" [(ngModel)]="school.observation" name="observation" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+      </div>
+    </div>
+  </div>
+    

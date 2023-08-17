@@ -40,19 +40,19 @@
         <div class="form-group">
           <label>Sexe</label>
           <select [(ngModel)]="student.sexeStudent" name="sexeStudent">
-            <option value="Homme">Homme</option>
-            <option value="Femme">Femme</option>
+            <option value="Homme" [ngValue]="student.sexeStudent">Homme</option>
+            <option value="Femme" [ngValue]="student.sexeStudent">Femme</option>
           </select>
         </div>
         <div class="form-group">
           <label>Niveau d'Étude</label>
-          <select class="form-control" [(ngModel)]="student.niveauEtudeStudent" name="niveauEtudeStudent">
-              <option value="Licence 1">Licence 1</option>
-              <option value="Licence 2">Licence 2</option>
-              <option value="Licence 3">Licence 3</option>
-              <option value="Master 1">Master 1</option>
-              <option value="Master 2">Master 2</option>
-              <option value="Doctorat">Doctorat</option>
+          <select class="form-control"  [(ngModel)]="student.niveauEtudeStudent" name="niveauEtudeStudent">
+              <option value="Licence 1" [ngValue]="student.niveauEtudeStudent">Licence 1</option>
+              <option value="Licence 2" [ngValue]="student.niveauEtudeStudent">Licence 2</option>
+              <option value="Licence 3" [ngValue]="student.niveauEtudeStudent">Licence 3</option>
+              <option value="Master 1"  [ngValue]="student.niveauEtudeStudent">Master 1</option>
+              <option value="Master 2"  [ngValue]="student.niveauEtudeStudent">Master 2</option>
+              <option value="Doctorat"  [ngValue]="student.niveauEtudeStudent">Doctorat</option>
           </select>
         </div> 
         <div class="form-row">

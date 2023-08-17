@@ -1,0 +1,38 @@
+<div class="custom-tables">
+    <div class="last-appointments">
+        <div class="heading">
+            <h2>La Liste des Ecoles</h2>
+            <a routerLink="/create-school" class="custom-btn">Add</a>
+        </div>
+        <table class="appointments">
+            <thead>
+                <td>Nom de l'école</td>
+                <td>Email</td>
+                <td>Téléphone</td>
+                <td>Localisation</td>
+                <td>Boite Postale</td>
+                <td>Observation</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let school of schools | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+                        <td>{{ school.nomSchool }}</td>
+                        <td>{{ school.emailSchool }}</td>
+                        <td>{{ school.telephoneSchool }}</td>
+                        <td>{{ school.localisationSchool }}</td>
+                        <td>{{ school.boitePostaleSchool }}</td>
+                        <td>{{ school.observation }}</td>
+                        <td>
+                            <button><i class="far fa-eye "></i></button>
+                            <button (click)="updateSchool(school.id)"><i class="far fa-edit" ></i></button>
+                            <button (click)="deleteSchool(school.id)"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <!-- Ajoutez les boutons de pagination ici -->
+            <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+        </div>
+    </div>
+</div>
+

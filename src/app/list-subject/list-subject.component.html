@@ -11,7 +11,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let subject of subjects | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
-                    <td>{{ subject.nomSubject }}</td>
+                        <td>{{ subject.nomSubject }}</td>
                         <td>
                             <button><i class="far fa-eye "></i></button>
                             <button (click)="updateSubject(subject.id)"><i class="far fa-edit" ></i></button>

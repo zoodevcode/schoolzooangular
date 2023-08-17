@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="container">
+  <h1 class="title">Formulaire de Note</h1>
+  <div class="photo-frame"></div>
+  <form (ngSubmit)="onSubmit()" class="my-form">
+    <div class="form-row">
+      <div class="form-group col-md-6" *ngIf="studentNote.student">
+        <div>
+          <label for="student">Student:</label>
+          <input type="text" id="student" name="student" [(ngModel)]="studentNote.student.id" class="form-control">
+        </div>
+      </div>    
+      <div class="form-group col-md-6" *ngIf="studentNote.subject">
+        <div>
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" [(ngModel)]="studentNote.subject.id" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="score">Score:</label>
+        <input type="text" [(ngModel)]="studentNote.score" name="score" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label for="evaluationDate">Evaluation Date:</label>
+        <input type="date" [(ngModel)]="studentNote.evaluationDate" name="evaluationDate" class="form-control">
+      </div>
+    </div>
+    <button type="submit">Envoyer</button>
+  </form>
+</div>

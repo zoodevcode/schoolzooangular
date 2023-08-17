@@ -14,21 +14,27 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a routerLink="/students">
                     <i class="fas fa-user-graduate"></i>
                     <div class="title">Students</div>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a routerLink="/list-school">
                     <i class="fas fa-puzzle-piece"></i>
                     <div class="title">School</div>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a routerLink="/list-teacher">
                     <i class="fas fa-chalkboard-teacher"></i>
                     <div class="title">Teachers</div>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/list-schoolyear">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <div class="title">School Year</div>
                 </a>
             </li>
             <li>
@@ -90,11 +96,11 @@
                     </div>
                 </div>
             </a>
-            <a href="#">
+            <a routerLink="/list-school">
                 <div class="custom-card">
                     <div class="custom-card-content">
-                        <div class="number">777</div>
-                        <div class="custom-card-name">School</div>
+                        <div class="number">{{ nombreSchools }}</div>
+                        <div class="custom-card-name">Schools</div>
                     </div>
                     <div class="icon-box">
                         <i class="fas fa-school"></i>
@@ -106,6 +112,28 @@
                     <div class="custom-card-content">
                         <div class="number">{{ nombreTeachers }}</div>
                         <div class="custom-card-name">Subject</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-book"></i>
+                    </div>
+                </div>
+            </a>
+            <a routerLink="/list-schoolyear">
+                <div class="custom-card">
+                    <div class="custom-card-content">
+                        <div class="number">{{ nombreSchoolYears }}</div>
+                        <div class="custom-card-name">School Year</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                </div>
+            </a>
+            <a routerLink="/list-studentNote">
+                <div class="custom-card">
+                    <div class="custom-card-content">
+                        <div class="number">{{ nombreStudentNotes }}</div>
+                        <div class="custom-card-name">StudentNote</div>
                     </div>
                     <div class="icon-box">
                         <i class="fas fa-book"></i>

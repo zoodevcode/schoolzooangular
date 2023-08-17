@@ -1,0 +1,20 @@
+/* add-school-year.component.css */
+.card {
+    width: 400px; /* Définissez la largeur de la carte selon vos préférences */
+    margin: 0 auto; /* Pour centrer la carte horizontalement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre douce à la carte */
+    border-radius: 10px; /* Arrondir les coins de la carte */
+  }
+  
+  .card-header {
+    background-color: #007bff; /* Couleur de fond de l'en-tête de la carte */
+    color: #fff; /* Couleur du texte de l'en-tête de la carte */
+    padding: 10px; /* Espace autour du texte de l'en-tête */
+    border-top-left-radius: 10px; /* Arrondir les coins supérieurs de l'en-tête */
+    border-top-right-radius: 10px;
+  }
+  
+  .card-body {
+    padding: 20px; /* Espace intérieur du corps de la carte */
+  }
+  

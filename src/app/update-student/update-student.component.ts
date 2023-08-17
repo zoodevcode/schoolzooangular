@@ -10,7 +10,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateStudentComponent implements OnInit{
   id :number | undefined;
-  student: Student=new Student();
+    // student: Student=new Student();
+    student: Student = {
+      sexeStudent: '',
+      niveauEtudeStudent: ''
+    };
   constructor(private service: StudentService, private route:ActivatedRoute, private router:Router){
 
   }

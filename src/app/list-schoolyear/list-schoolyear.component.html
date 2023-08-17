@@ -1,0 +1,31 @@
+<div class="custom-tables">
+    <div class="last-appointments">
+        <div class="heading">
+            <h2>La Liste des Enseignants</h2>
+            <a routerLink="/create-schoolyear" class="custom-btn">Add</a>
+        </div>
+        <table class="appointments">
+            <thead>
+                <td>Nom</td>
+                <td>Date de début</td>
+                <td>Date de fin</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let schoolyear of schoolyears | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+                        <td>{{ schoolyear.nameSchoolYear }}</td>
+                        <td>{{ schoolyear.startDate }}</td>
+                        <td>{{ schoolyear.endDate }}</td>
+                        <td>
+                            <button><i class="far fa-eye "></i></button>
+                            <button (click)="updateSchoolyear(schoolyear.id)"><i class="far fa-edit" ></i></button>
+                            <button (click)="deleteSchoolyear(schoolyear.id)"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <!-- Ajoutez les boutons de pagination ici -->
+            <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+        </div>
+    </div>
+</div>

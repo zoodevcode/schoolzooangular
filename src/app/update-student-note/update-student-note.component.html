@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <div class="container">
+      <h1 class="title">Formulaire d'Inscription</h1>
+      <div class="photo-frame"></div>
+      <form (ngSubmit)="onSubmit()" class="my-form">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="nomStudent">Student:</label>
+            <input  type="text" *ngIf="studentNote.student" [(ngModel)]="studentNote.student.nomStudent" name="nomStudent" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label for="prenomStudent">Prenom:</label>
+            <input *ngIf="studentNote.student" type="text" [(ngModel)]="studentNote.student.prenomStudent" name="prenomStudent" class="form-control" required>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="score">Score:</label>
+                <input type="text" [(ngModel)]="studentNote.score" name="score" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label>Evaluation</label>
+                <input type="date" class="form-control" required [(ngModel)]="studentNote.evaluationDate" name="evaluationDate" required>
+            </div> 
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+

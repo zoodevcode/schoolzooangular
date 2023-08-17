@@ -1,0 +1,33 @@
+<div class="custom-tables">
+    <div class="last-appointments">
+        <div class="heading">
+            <h2>La Liste des Eleves</h2>
+            <a routerLink="/create-studentNote" class="custom-btn">Add</a>
+        </div>
+        <table class="appointments">
+            <thead>
+                <td>Student</td>
+                <td>Subject</td>
+                <td>Score</td>
+                <td>Evaluation</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let studentNote of studentNotes | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+                        <td>{{ studentNote.student?.prenomStudent }} {{ studentNote.student?.prenomStudent }}</td>
+                        <td>{{ studentNote.subject?.nomSubject }}</td>
+                        <td>{{ studentNote.score }}</td>
+                        <td>{{ studentNote.evaluationDate }}</td>
+                        <td>
+                            <button><i class="far fa-eye "></i></button>
+                            <button (click)="updateStudentNote(studentNote.id)"><i class="far fa-edit" ></i></button>
+                            <button (click)="deleteStudentNote(studentNote.id)"><i class="far fa-trash-alt"></i></button>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <!-- Ajoutez les boutons de pagination ici -->
+            <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+        </div>
+    </div>
+</div>

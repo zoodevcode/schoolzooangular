@@ -10,6 +10,12 @@ import { Student } from '../student';
 })
 export class ListStudentComponent implements OnInit{
 
+  itemsPerPage: number = 5; // Nombre d'éléments par page
+  currentPage: number = 1; // Page actuelle
+  // Fonction pour mettre à jour la page actuelle lorsqu'un changement de page est déclenché
+  onPageChange(pageNumber: number) {
+    this.currentPage = pageNumber;
+  }
   students:Student[]=[];
   constructor(private service:StudentService, private router:Router){}
   ngOnInit(): void {

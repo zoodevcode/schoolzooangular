@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <div class="container">
+      <h1 class="title">Formulaire d'Inscription</h1>
+      <div class="photo-frame"></div>
+      <form (ngSubmit)="onSubmit()" class="my-form">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="nomSchool">Nom:</label>
+            <input type="text" [(ngModel)]="school.nomSchool" name="nomSchool" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label for="emailSchool">Email:</label>
+            <input type="text" [(ngModel)]="school.emailSchool" name="emailSchool" class="form-control" required>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="telephoneSchool">Email:</label>
+                <input type="text" [(ngModel)]="school.telephoneSchool" name="telephoneSchool" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label>Localisation</label>
+                <input type="text" class="form-control" required [(ngModel)]="school.localisationSchool" name="localisationSchool" required>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>boite Postale</label>
+                <input type="text" class="form-control" [(ngModel)]="school.boitePostaleSchool" name="boitePostaleSchool" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Observation</label>
+                <input type="text" class="form-control" [(ngModel)]="school.observation" name="observation" required>
+            </div>
+        </div>   
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+
